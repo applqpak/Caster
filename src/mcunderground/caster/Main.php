@@ -16,7 +16,6 @@ class Main extends PluginBase implements Listener {
     public function onEnable()
 {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
-$this->getServer()->getPluginManager()->registerEvents(new welcome($this), $this);
         @mkdir($this->getDataFolder());
         $this->configFile = (new Config($this->getDataFolder()."config.yml", Config::YAML, array(
             "prefix" => "Broadcast",
