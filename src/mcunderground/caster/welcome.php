@@ -22,11 +22,6 @@ class welcome extends PluginBase implements Listener {
 
     public function onJoin(PlayerJoinEvent $event) {
         $player = $event->getPlayer();
-        $name = strtolower($player->getDisplayName());
-        if($name == $this->getConfig()->get("owner")){
-            $this->getServer()->broadcastMessage("The §bOwner§r " . $this->configFile["owner"] .  " joined the game."); 
-        }else{ 
-           $event->getPlayer()->sendMessage($this->configFile["welcomeMessage"]);
-        } 
+         $player->sendMessage($this->configFile["welcomeMessage"]);
+       }   
     }
-}
