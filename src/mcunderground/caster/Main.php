@@ -37,7 +37,7 @@ class Main extends PluginBase implements Listener {
         switch($command->getName()){
             case "cast":
                 if (isset($args[0])) {
-                    Server::getInstance()->broadcastMessage($this->configFile["firstBColor"].$this->configFile["1Symbol"].$this->configFile["prefixColor"].$this->configFile["prefix"].$this->configFile["secondBColor"].$this->configFile["2Symbol"]." ".$this->configFile["messageColor"].implode(" ", $args));
+                    $this->getServer()->broadcastMessage($this->configFile["firstBColor"].$this->configFile["1Symbol"].$this->configFile["prefixColor"].$this->configFile["prefix"].$this->configFile["secondBColor"].$this->configFile["2Symbol"]." ".$this->configFile["messageColor"].implode(" ", $args));
                 }
                 else {
                     $sender->sendMessage("§4[Caster] §eUsage /cast (message).");
